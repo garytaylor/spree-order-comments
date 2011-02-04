@@ -1,6 +1,10 @@
-map.resources :comments
+Rails.application.routes.draw do
+  resources :comments
 
-map.namespace :admin do |admin|
-   admin.resources :orders, :member => {:comments => :get}
+  namespace :admin do
+     resources :orders, :member => {:comments => :get}
+  end
 end
+
+
 
